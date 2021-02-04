@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  input {
-    width: 400px;
-    height: 50px;
+  background: #fff;
+  padding: 16px;
+  width: 450px;
+  color: #666360;
+  display: flex;
+  align-items: center;
 
-    padding: 16px;
+  input {
+    background: transparent;
+    border: 0;
+    flex: 1;
+    &::placeholder {
+      color: #666360;
+    }
+  }
+  svg {
+    margin-right: 16px;
   }
 `;

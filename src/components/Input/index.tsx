@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
+import { IconBaseProps } from 'react-icons';
 
 import { Container } from './styles';
 
-const Input: React.FC = () => {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  icon: React.ComponentType<IconBaseProps>;
+}
+
+const Input: React.FC<InputProps> = ({ icon: Icon, ...rest }) => {
   return (
     <Container>
-      <input
-        type="text"
-        name="seach"
-        placeholder="Insira aqui o nome da cidade"
-      />
+      <input {...rest} />
+      {Icon && <Icon size={20} />}
     </Container>
   );
 };
